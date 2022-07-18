@@ -1,5 +1,0 @@
-/**
- *
- * Aliyun - Function Compute
- *
- */

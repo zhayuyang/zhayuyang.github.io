@@ -1,5 +1,0 @@
-/**
- *
- * Google - Cloud Functions
- *
- */

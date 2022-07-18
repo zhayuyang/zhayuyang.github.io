@@ -1,5 +1,0 @@
-/**
- *
- * AWS Lambda – Serverless Compute
- *
- */

@@ -1,5 +1,0 @@
-/**
- *
- * Cloudflare Workers
- *
- */

@@ -1,6 +1,0 @@
-/**
- *
- * Heroku
- * (Just some api)
- *
- */
