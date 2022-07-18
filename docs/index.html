@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OneDriveFly</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Styles -->
+    <style>
+        body,html{background-color:#fff;color:#636b6f;font-family:Raleway,sans-serif;font-weight:100;height:100vh;margin:0}
+        .full-height{height:100vh}
+        .flex-center{align-items:center;display:flex;justify-content:center}
+        .position-ref{position:relative}
+        .top-right{position:absolute;right:10px;top:18px}
+        .content{text-align:center}
+        .title{font-size:84px}
+        .links>a{color:#636b6f;padding:0 25px;font-size:12px;font-weight:600;letter-spacing:.1rem;text-decoration:none;text-transform:uppercase}
+        .m-b-md{margin-bottom:30px}
+    </style>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+
+    <div class="content">
+        <div class="title m-b-md">
+            OneDrive Fly
+        </div>
+
+        <div class="links">
+            <a href="install.html">Install</a>
+            <a href="https://github.com/Tai7sy/OneDriveFly">GitHub</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function getParam(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // state is a return_url for the origin website
+    if (getParam('code') && getParam('state')) {
+        var state = JSON.parse(getParam('state'));
+        document.getElementsByClassName('title')[0].innerHTML = 'Redirecting...';
+        var oauth_callback = {
+            name: state.name,
+            code: getParam('code'),
+            oauth: state.oauth
+        };
+        location.href = state.return_url + '?oauth_callback=' + encodeURIComponent(JSON.stringify(oauth_callback));
+    }
+</script>
+</body>
+</html>
